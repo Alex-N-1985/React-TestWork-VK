@@ -1,0 +1,48 @@
+.product__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.product__card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: black;
+}
+
+.product__card-desc {
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+}
+
+.product__card-price, .product__card-quant {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.product__card img {
+    width: 90%;
+}
+
+.product__card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+}
+
+.product__card-container button {
+    display: block;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 800;
+    width: 50px;
+    height: 50px;
+}
