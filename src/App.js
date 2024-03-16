@@ -2,16 +2,17 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import ProductCard from './components/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProduct } from './store/products';
+import { addProduct, clearProducts } from './store/products';
 
 const App = () => {
-  const [productsNum, setProductsNum] = useState(10);
+  const [productsNum, setProductsNum] = useState(5);
 
   const products = useSelector(state => state.products.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const url = `https://fakestoreapi.com/products?limit=${productsNum}`;
+    dispatch(clearProducts());
     fetch(url).then((responce) => {
       return responce.json();
     }).then((result) => {
@@ -28,7 +29,6 @@ const App = () => {
             }
         ));
       }
-      setProductsNum(products.length);      
     }).catch((error) => console.log(error));
   }, [productsNum]);
 
